@@ -76,39 +76,42 @@ struct CurrentWeatherView: View {
   }
   
   func locationView(_ item: WeatherInfo) -> some View {
-    VStack(spacing: 24) {
-      AnyView(item.conditionImage)
-        .frame(height: 124)
-      HStack {
-        Text(item.city)
-          .font(.system(size: 30, weight: .bold))
-        Image.location
-          .font(.system(size: 24, weight: .bold))
+    ScrollView {
+      VStack(spacing: 24) {
+        AnyView(item.conditionImage)
+          .frame(height: 124)
+        HStack {
+          Text(item.city)
+            .font(.system(size: 30, weight: .bold))
+          Image.location
+            .font(.system(size: 24, weight: .bold))
+        }
+        HStack(alignment: .top) {
+          Text(item.temp)
+            .font(.system(size: 68, weight: .bold))
+          Image.circle
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 6, height: 6)
+            .padding(.top, 12)
+            .fontWeight(.bold)
+        }
+        
+        HStack(spacing: 48) {
+          otherDetail(label: "Humidity", value: "\(item.humidity)%")
+          otherDetail(label: "UV", value: item.uv)
+          otherDetail(label: "Feels Like", value: "\(item.feelsLike)°")
+        }
+        .padding(20)
+        .background {
+          RoundedRectangle(cornerRadius: 16)
+            .fill(Color.gray.opacity(0.1))
+        }
+        Spacer()
       }
-      HStack(alignment: .top) {
-        Text(item.temp)
-          .font(.system(size: 68, weight: .bold))
-        Image.circle
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 6, height: 6)
-          .padding(.top, 12)
-          .fontWeight(.bold)
-      }
-      
-      HStack(spacing: 48) {
-        otherDetail(label: "Humidity", value: "\(item.humidity)%")
-        otherDetail(label: "UV", value: item.uv)
-        otherDetail(label: "Feels Like", value: "\(item.feelsLike)°")
-      }
-      .padding(20)
-      .background {
-        RoundedRectangle(cornerRadius: 16)
-          .fill(Color.gray.opacity(0.1))
-      }
-      Spacer()
+      .padding(.top, 56)
+      .frame(maxWidth: .infinity)
     }
-    .padding(.top, 56)
   }
   
   func otherDetail(label: String, value: String) -> some View {
