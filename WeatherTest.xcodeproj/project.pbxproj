@@ -6,19 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		F3B795DD2D51457C0024CB5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F3B795C42D51457B0024CB5B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F3B795CB2D51457B0024CB5B;
-			remoteInfo = WeatherTest;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		F3B795CC2D51457B0024CB5B /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3B795DC2D51457C0024CB5B /* WeatherTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -42,13 +31,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3B795D92D51457C0024CB5B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				F3B795CC2D51457B0024CB5B /* WeatherTest.app */,
-				F3B795DC2D51457C0024CB5B /* WeatherTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,29 +76,6 @@
 			productReference = F3B795CC2D51457B0024CB5B /* WeatherTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F3B795DB2D51457C0024CB5B /* WeatherTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3B795F32D51457C0024CB5B /* Build configuration list for PBXNativeTarget "WeatherTestTests" */;
-			buildPhases = (
-				F3B795D82D51457C0024CB5B /* Sources */,
-				F3B795D92D51457C0024CB5B /* Frameworks */,
-				F3B795DA2D51457C0024CB5B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3B795DE2D51457C0024CB5B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F3B795DF2D51457C0024CB5B /* WeatherTestTests */,
-			);
-			name = WeatherTestTests;
-			packageProductDependencies = (
-			);
-			productName = WeatherTestTests;
-			productReference = F3B795DC2D51457C0024CB5B /* WeatherTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,10 +88,6 @@
 				TargetAttributes = {
 					F3B795CB2D51457B0024CB5B = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					F3B795DB2D51457C0024CB5B = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = F3B795CB2D51457B0024CB5B;
 					};
 				};
 			};
@@ -152,20 +106,12 @@
 			projectRoot = "";
 			targets = (
 				F3B795CB2D51457B0024CB5B /* WeatherTest */,
-				F3B795DB2D51457C0024CB5B /* WeatherTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F3B795CA2D51457B0024CB5B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3B795DA2D51457C0024CB5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,22 +128,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3B795D82D51457C0024CB5B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F3B795DE2D51457C0024CB5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F3B795CB2D51457B0024CB5B /* WeatherTest */;
-			targetProxy = F3B795DD2D51457C0024CB5B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F3B795EE2D51457C0024CB5B /* Debug */ = {
@@ -377,44 +308,6 @@
 			};
 			name = Release;
 		};
-		F3B795F42D51457C0024CB5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58A3K427LB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.maddlabs.WeatherTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherTest";
-			};
-			name = Debug;
-		};
-		F3B795F52D51457C0024CB5B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58A3K427LB;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.maddlabs.WeatherTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherTest";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -432,15 +325,6 @@
 			buildConfigurations = (
 				F3B795F12D51457C0024CB5B /* Debug */,
 				F3B795F22D51457C0024CB5B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3B795F32D51457C0024CB5B /* Build configuration list for PBXNativeTarget "WeatherTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3B795F42D51457C0024CB5B /* Debug */,
-				F3B795F52D51457C0024CB5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

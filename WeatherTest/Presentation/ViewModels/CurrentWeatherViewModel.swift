@@ -42,7 +42,7 @@ final class CurrentWeatherViewModel: ObservableObject {
           }
         } catch {
           await MainActor.run {
-            print("Error loading saved location: \(error.localizedDescription)")
+            viewType = .error
           }
         }
       }
@@ -72,7 +72,7 @@ final class CurrentWeatherViewModel: ObservableObject {
           }
         } catch {
           await MainActor.run {
-            print("Error searching: \(error)")
+            viewType = .error
           }
         }
       }
@@ -106,6 +106,7 @@ final class CurrentWeatherViewModel: ObservableObject {
 
 enum ViewType {
   case empty
+  case error
   case list
   case location
   case noCitySelected

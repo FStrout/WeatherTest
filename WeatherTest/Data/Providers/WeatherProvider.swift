@@ -16,8 +16,6 @@ class WeatherProvider {
   let session: URLSession
   let decoder: JSONDecoder
   
-  let baseUrl = "https://api.weatherapi.com/v1"
-  
   init(session: URLSession = .shared, decoder: JSONDecoder = JSONDecoder()) {
     self.session = session
     self.decoder = decoder
@@ -28,9 +26,8 @@ class WeatherProvider {
 extension WeatherProvider: WeatherProviderProtocol {
   
   func getCurrent(_ location: String) async throws -> WeatherInfo {
-    let url = URL(string: "\(baseUrl)/current.json?key=0234565d86f6411a813234329252701&q=\(location)")!
     
-    let request = URLRequest(url: url)
+    let request = URLRequest(url: Endpoint.currentWeather(location).absoluteURL)
     
     let (data, response) = try await session.data(for: request)
     
@@ -48,9 +45,8 @@ extension WeatherProvider: WeatherProviderProtocol {
   }
   
   func search(_ searchString: String) async throws -> [SearchResult] {
-    let url = URL(string: "\(baseUrl)/search.json?key=0234565d86f6411a813234329252701&q=\(searchString)")!
     
-    let request = URLRequest(url: url)
+    let request = URLRequest(url: Endpoint.searchCity(searchString).absoluteURL)
     
     let (data, response) = try await session.data(for: request)
     

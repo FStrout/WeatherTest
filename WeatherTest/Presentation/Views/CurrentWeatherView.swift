@@ -35,6 +35,8 @@ struct CurrentWeatherView: View {
       switch viewModel.viewType {
       case .empty:
         emptyView
+      case .error:
+        emptyView
       case .list:
         searchList
       case .location:
@@ -48,6 +50,20 @@ struct CurrentWeatherView: View {
       case .loading:
         loadingView
       }
+    }
+    .alert(
+      "Something went wrong.",
+      isPresented:Binding<Bool>(
+        get: {
+          self.viewModel.viewType == .error
+        },
+        set: { _ in
+          self.viewModel.viewType = .empty
+        }
+      )
+    ) {}
+    message: {
+      Text("Please try again later.")
     }
   }
   
