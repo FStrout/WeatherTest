@@ -16,14 +16,13 @@ final class CurrentWeatherViewModel: ObservableObject {
     }
   }
   
-  @Published var weatherInfo: [WeatherInfo] = []
-  
   @Published var viewType: ViewType = .noCitySelected
-  
-  let weatherUseCase: WeatherUseCaseProtocol
+  @Published var weatherInfo: [WeatherInfo] = []
   
   let defaults = UserDefaults.standard
   let locationKey = "Location"
+  var searchResults: [SearchResult] = []
+  let weatherUseCase: WeatherUseCaseProtocol
   
   init(weatherUseCase: WeatherUseCaseProtocol = WeatherUseCase()) {
     self.weatherUseCase = weatherUseCase
@@ -32,6 +31,7 @@ final class CurrentWeatherViewModel: ObservableObject {
   
   func getSavedLocation() {
     if let savedLocationData = defaults.object(forKey: locationKey) as? String {
+      viewType = .loading
       Task {
         do {
           let location  = try await weatherUseCase.fetchWeather(
@@ -64,10 +64,8 @@ final class CurrentWeatherViewModel: ObservableObject {
           )
           await MainActor.run {
             weatherInfo.append(currentWeather)
-            if weatherInfo.count > 0 {
+            if searchResults.count == weatherInfo.count {
               viewType = .list
-            } else {
-              viewType = .empty
             }
           }
         } catch {
@@ -88,16 +86,16 @@ final class CurrentWeatherViewModel: ObservableObject {
           matching: searchString
         )
         await MainActor.run {
-          getCompleteSearchResults(results)
           if results.count > 0 {
-            self.viewType = .list
+            searchResults = results
+            getCompleteSearchResults(results)
           } else {
             self.viewType = .empty
           }
         }
       } catch {
         await MainActor.run {
-          print("Error searching: \(error)")
+          viewType = .error
         }
       }
     }

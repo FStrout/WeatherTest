@@ -6,24 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		F389DBC12D5286FD00C19CA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3B795C42D51457B0024CB5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B795CB2D51457B0024CB5B;
+			remoteInfo = WeatherTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F389DBBD2D5286FD00C19CA6 /* WeatherTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B795CC2D51457B0024CB5B /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F389DBD32D528A8C00C19CA6 /* Exceptions for "WeatherTestTests" folder in "WeatherTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataMocks/JSON/CurrentWeather.json,
+				DataMocks/JSON/SearchResults.json,
+			);
+			target = F3B795CB2D51457B0024CB5B /* WeatherTest */;
+		};
+		F389DBD42D528A8C00C19CA6 /* Exceptions for "WeatherTestTests" folder in "WeatherTestTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataMocks/JSON/CurrentWeather.json,
+				DataMocks/JSON/SearchResults.json,
+			);
+			target = F389DBBC2D5286FD00C19CA6 /* WeatherTestTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F389DBBE2D5286FD00C19CA6 /* WeatherTestTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F389DBD32D528A8C00C19CA6 /* Exceptions for "WeatherTestTests" folder in "WeatherTest" target */,
+				F389DBD42D528A8C00C19CA6 /* Exceptions for "WeatherTestTests" folder in "WeatherTestTests" target */,
+			);
+			path = WeatherTestTests;
+			sourceTree = "<group>";
+		};
 		F3B795CE2D51457B0024CB5B /* WeatherTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WeatherTest;
 			sourceTree = "<group>";
 		};
-		F3B795DF2D51457C0024CB5B /* WeatherTestTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeatherTestTests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F389DBBA2D5286FD00C19CA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3B795C92D51457B0024CB5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B795CE2D51457B0024CB5B /* WeatherTest */,
-				F3B795DF2D51457C0024CB5B /* WeatherTestTests */,
+				F389DBBE2D5286FD00C19CA6 /* WeatherTestTests */,
 				F3B795CD2D51457B0024CB5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B795CC2D51457B0024CB5B /* WeatherTest.app */,
+				F389DBBD2D5286FD00C19CA6 /* WeatherTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +96,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F389DBBC2D5286FD00C19CA6 /* WeatherTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F389DBC32D5286FD00C19CA6 /* Build configuration list for PBXNativeTarget "WeatherTestTests" */;
+			buildPhases = (
+				F389DBB92D5286FD00C19CA6 /* Sources */,
+				F389DBBA2D5286FD00C19CA6 /* Frameworks */,
+				F389DBBB2D5286FD00C19CA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F389DBC22D5286FD00C19CA6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F389DBBE2D5286FD00C19CA6 /* WeatherTestTests */,
+			);
+			name = WeatherTestTests;
+			packageProductDependencies = (
+			);
+			productName = WeatherTestTests;
+			productReference = F389DBBD2D5286FD00C19CA6 /* WeatherTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F3B795CB2D51457B0024CB5B /* WeatherTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3B795F02D51457C0024CB5B /* Build configuration list for PBXNativeTarget "WeatherTest" */;
@@ -86,6 +151,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					F389DBBC2D5286FD00C19CA6 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3B795CB2D51457B0024CB5B;
+					};
 					F3B795CB2D51457B0024CB5B = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -106,11 +175,19 @@
 			projectRoot = "";
 			targets = (
 				F3B795CB2D51457B0024CB5B /* WeatherTest */,
+				F389DBBC2D5286FD00C19CA6 /* WeatherTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F389DBBB2D5286FD00C19CA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3B795CA2D51457B0024CB5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,6 +198,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F389DBB92D5286FD00C19CA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3B795C82D51457B0024CB5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,7 +214,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F389DBC22D5286FD00C19CA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3B795CB2D51457B0024CB5B /* WeatherTest */;
+			targetProxy = F389DBC12D5286FD00C19CA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F389DBC42D5286FD00C19CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58A3K427LB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maddlabs.WeatherTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherTest";
+			};
+			name = Debug;
+		};
+		F389DBC52D5286FD00C19CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58A3K427LB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maddlabs.WeatherTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherTest";
+			};
+			name = Release;
+		};
 		F3B795EE2D51457C0024CB5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -311,6 +439,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F389DBC32D5286FD00C19CA6 /* Build configuration list for PBXNativeTarget "WeatherTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F389DBC42D5286FD00C19CA6 /* Debug */,
+				F389DBC52D5286FD00C19CA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3B795C72D51457B0024CB5B /* Build configuration list for PBXProject "WeatherTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
